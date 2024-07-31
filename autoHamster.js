@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const url = process.env.URL;  // Замените на ваш URL
 const token = process.env.TOKEN;
-const minutes = process.env.INTERVAL_MINUTES
+const minutes = parseInt(process.env.INTERVAL_MINUTES)
 const countTaps = parseInt(process.env.COUNT_TAPS)
 
 console.log()
