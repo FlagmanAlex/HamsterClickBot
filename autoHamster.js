@@ -3,6 +3,8 @@ const axios = require('axios');
 
 const url = process.env.URL;  // Замените на ваш URL
 const token = process.env.TOKEN;
+const minutes = process.env.INTERVAL_MINUTES
+const countTaps = process.env.COUNT_TAPS
 
 console.log()
 setInterval(() => {
@@ -11,8 +13,8 @@ setInterval(() => {
 
   const data = {
     // Ваши данные для отправки
-      count: 11000, //Заменить на максимальное кол-во энергии
-      availableTaps: 11000, //Заменить на максимальное кол-во энергии
+      count: countTaps, //Заменить на максимальное кол-во энергии
+      availableTaps: countTaps, //Заменить на максимальное кол-во энергии
       timestamp: Math.floor(currentTime/1000)
   }
 
@@ -33,4 +35,4 @@ setInterval(() => {
   
   console.log(currentTime, data)
   
-}, 1,5*60*60*1000) //1,5 - это межинтервальные часы. Рассчитать с запасом, чтобы не запускался чаще, чем энергия наполняется до краев.
+}, minutes*60*1000) //Рассчитать с запасом, чтобы не запускался чаще, чем энергия наполняется до краев.
