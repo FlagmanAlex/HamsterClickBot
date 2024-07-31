@@ -4,10 +4,10 @@ const axios = require('axios');
 const url = process.env.URL;  // Замените на ваш URL
 const token = process.env.TOKEN;
 const minutes = process.env.INTERVAL_MINUTES
-const countTaps = process.env.COUNT_TAPS
+const countTaps = parseInt(process.env.COUNT_TAPS)
 
 console.log()
-setInterval(() => {
+// setInterval(() => {
 
   currentTime = new Date()
 
@@ -35,4 +35,4 @@ setInterval(() => {
   
   console.log(currentTime, data)
   
-}, minutes*60*1000) //Рассчитать с запасом, чтобы не запускался чаще, чем энергия наполняется до краев.
+// }, minutes*60*1000) //Рассчитать с запасом, чтобы не запускался чаще, чем энергия наполняется до краев.
